@@ -57,17 +57,21 @@ namespace Warenkorb
             }
         }
 
+       
         private void buttonHinzufügen_Click(object sender, EventArgs e)
         {
-            
             if (comboBoxAuswahl.SelectedIndex > -1)
             {
-                int menge = Convert.ToInt32(textBoxAnzahl.Text);
-                // Angenommen, listViewProdukte ist Ihre ListView auf der Form
                 string selectedItem = comboBoxAuswahl.SelectedItem.ToString();
-                ListViewProdukte.Items.Add(selectedItem);
+                int menge = Convert.ToInt32(formAnzahl.Text);
+
+                Form2 form2 = new Form2();
+                form2.AddItemToListView(selectedItem, menge);
+               
             }
         }
+
+
 
     }
 }

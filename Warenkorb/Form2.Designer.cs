@@ -34,7 +34,7 @@
             this.labelSumme = new System.Windows.Forms.Label();
             this.buttonAbbrechen = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.listViewProdukte = new System.Windows.Forms.ListView();
+            this.listViewWarenkorb = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,21 +85,21 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Dein Warenkorb";
             // 
-            // listViewProdukte
+            // listViewWarenkorb
             // 
-            this.listViewProdukte.HideSelection = false;
-            this.listViewProdukte.Location = new System.Drawing.Point(12, 109);
-            this.listViewProdukte.Name = "listViewProdukte";
-            this.listViewProdukte.Size = new System.Drawing.Size(367, 173);
-            this.listViewProdukte.TabIndex = 6;
-            this.listViewProdukte.UseCompatibleStateImageBehavior = false;
+            this.listViewWarenkorb.HideSelection = false;
+            this.listViewWarenkorb.Location = new System.Drawing.Point(12, 109);
+            this.listViewWarenkorb.Name = "listViewWarenkorb";
+            this.listViewWarenkorb.Size = new System.Drawing.Size(367, 173);
+            this.listViewWarenkorb.TabIndex = 6;
+            this.listViewWarenkorb.UseCompatibleStateImageBehavior = false;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 355);
-            this.Controls.Add(this.listViewProdukte);
+            this.Controls.Add(this.listViewWarenkorb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonAbbrechen);
             this.Controls.Add(this.labelSumme);
@@ -120,6 +120,6 @@
         private System.Windows.Forms.Label labelSumme;
         private System.Windows.Forms.Button buttonAbbrechen;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView listViewProdukte;
+        private System.Windows.Forms.ListView listViewWarenkorb;
     }
 }

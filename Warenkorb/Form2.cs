@@ -22,10 +22,13 @@ namespace Warenkorb
         {
             Close();
         }
-        private void Form2_Load(object sender, EventArgs e)
+        public void AddItemToListView(string item, int menge)
         {
-            
+            ListViewItem listViewItem = new ListViewItem(item);
+            listViewItem.SubItems.Add(menge.ToString());
+            listViewWarenkorb.Items.Add(listViewItem);
         }
+
 
     }
 }

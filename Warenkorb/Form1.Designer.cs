@@ -36,8 +36,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxAuswahl = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxAnzahl = new System.Windows.Forms.TextBox();
+            this.formAnzahl = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formAnzahl)).BeginInit();
             this.SuspendLayout();
             // 
             // linkLabelAnzeigen
@@ -97,7 +98,6 @@
             this.comboBoxAuswahl.Name = "comboBoxAuswahl";
             this.comboBoxAuswahl.Size = new System.Drawing.Size(189, 21);
             this.comboBoxAuswahl.TabIndex = 5;
-            this.comboBoxAuswahl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBoxAuswahl_MouseClick);
             // 
             // label2
             // 
@@ -108,19 +108,19 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Anzahl:";
             // 
-            // textBoxAnzahl
+            // formAnzahl
             // 
-            this.textBoxAnzahl.Location = new System.Drawing.Point(114, 160);
-            this.textBoxAnzahl.Name = "textBoxAnzahl";
-            this.textBoxAnzahl.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAnzahl.TabIndex = 7;
+            this.formAnzahl.Location = new System.Drawing.Point(114, 160);
+            this.formAnzahl.Name = "formAnzahl";
+            this.formAnzahl.Size = new System.Drawing.Size(60, 20);
+            this.formAnzahl.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 347);
-            this.Controls.Add(this.textBoxAnzahl);
+            this.Controls.Add(this.formAnzahl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxAuswahl);
             this.Controls.Add(this.label1);
@@ -131,6 +131,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formAnzahl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,7 +146,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxAuswahl;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxAnzahl;
+        private System.Windows.Forms.NumericUpDown formAnzahl;
     }
 }
 

@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelSumme = new System.Windows.Forms.Label();
             this.buttonAbbrechen = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.listViewProdukte = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,14 +47,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 104);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(376, 185);
-            this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
@@ -93,16 +85,25 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Dein Warenkorb";
             // 
+            // listViewProdukte
+            // 
+            this.listViewProdukte.HideSelection = false;
+            this.listViewProdukte.Location = new System.Drawing.Point(12, 109);
+            this.listViewProdukte.Name = "listViewProdukte";
+            this.listViewProdukte.Size = new System.Drawing.Size(367, 173);
+            this.listViewProdukte.TabIndex = 6;
+            this.listViewProdukte.UseCompatibleStateImageBehavior = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 355);
+            this.Controls.Add(this.listViewProdukte);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonAbbrechen);
             this.Controls.Add(this.labelSumme);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -115,10 +116,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelSumme;
         private System.Windows.Forms.Button buttonAbbrechen;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListView listViewProdukte;
     }
 }

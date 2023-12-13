@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Warenkorb
 {
     public partial class Form1 : Form
     {
+        private CartForm form2 = new CartForm();
+
         public Form1()
         {
             InitializeComponent();
@@ -42,41 +38,27 @@ namespace Warenkorb
                 }
             }
         }
-        List<OrderItem> orderedItems = new List<OrderItem>();
 
-
-
-        private void UpdateTotalQuantity()
+        private void linkLabelAnzeigen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            int totalQuantity = 0;
-            foreach (OrderItem item in orderedItems)
-            {
-                totalQuantity += item.Quantity; 
-            }
-
-            labelAnzeigeAnz.Text = "(" + totalQuantity.ToString() +")";
+            form2.ShowDialog();
         }
 
         private void buttonHinzufügen_Click(object sender, EventArgs e)
         {
-            int menge = Convert.ToInt32(formAnzahl.Value);
-
             if (comboBoxAuswahl.SelectedIndex > -1)
             {
-                Product selectedProduct = comboBoxAuswahl.SelectedItem as Product;
-                OrderItem item = new OrderItem(selectedProduct, menge);
-                orderedItems.Add(item);
-                UpdateTotalQuantity(); 
+                Product selectedProduct = (Product)comboBoxAuswahl.SelectedItem;
+                if (int.TryParse(formAnzahl.Text, out int menge))
+                {
+                    form2.AddItemToListView(selectedProduct, menge);
+                    MessageBox.Show("Erfolgreich hinzugefügt", "Success");
+                }
+                else
+                {
+                    MessageBox.Show("Bitte geben Sie eine gültige Anzahl ein", "Eingabefehler");
+                }
             }
         }
-
-        private void linkLabelAnzeigen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Form2 war = new Form2();
-            war.AddItemsToListView(orderedItems);  
-            war.ShowDialog();
-        }
-
     }
 }
-

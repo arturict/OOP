@@ -8,22 +8,15 @@ namespace Warenkorb
 {
     public class OrderItem
     {
-        public OrderItem(Product product, int quantity)
-        {
-            Product = product;
-            Quantity = quantity;
-        }
         public Product Product { get; set; }
         public int Quantity { get; set; }
+        public OrderItem() { }
 
-        public double GetAmount()
-        {
-            return Product.Price * Quantity;
-        }
+        public double GetAmount() { 
+            return Quantity; }
         public override string ToString()
         {
-            return Quantity + "x " + Product.ToString();
+            return $"{Quantity} x {Product.Name} ({Product.Price.ToString("C2")})";
         }
     }
-
 }

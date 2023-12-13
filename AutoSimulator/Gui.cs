@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace AutoSimulator
 {
     public partial class Gui : Form
-    {
+    { 
         public Gui()
         {
             InitializeComponent();

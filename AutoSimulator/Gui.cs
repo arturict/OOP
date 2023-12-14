@@ -36,6 +36,7 @@ namespace AutoSimulator
         private void comboBoxAutos_SelectedIndexChanged(object sender, EventArgs e)
         {
             car = comboBoxAutos.SelectedItem as Auto;
+            labelPS.Text = car.PS.ToString() + " PS";
         }
 
 
@@ -102,31 +103,45 @@ namespace AutoSimulator
             {
                 timerTanken.Stop(); 
             }
+            labelTankProzent.Text = car.TankFuellstand.ToString() + "%";
         }
 
         private void buttonGas_MouseDown(object sender, MouseEventArgs e)
         {
-            if (car != null)
+            if (car != null && car.IstMotorGestartet)
             {
                 timerGas.Start();
             }
             else
             {
-                MessageBox.Show("Bitte wählen Sie zuerst ein Auto aus.");
+                MessageBox.Show("Bitte wählen Sie zuerst ein Auto aus und starten Sie den Motor.");
             }
         }
+
         private void buttonGas_MouseUp(object sender, MouseEventArgs e)
         {
             timerGas.Stop();
         }
+
         private void timerGas_Tick(object sender, EventArgs e)
         {
-           
+            if (car.TankFuellstand > 0)
+            {
                 car.gibGas();
+               
 
-                labelKmh.Text = car.AktuelleGeschwindigkeit.ToString();
-           
+            }
+            else
+            {
+                timerGas.Stop();
+                MessageBox.Show("Der Tank ist leer. Bitte tanken Sie.");
+            }
+            labelKmh.Text = car.AktuelleGeschwindigkeit.ToString();
+            labelTankProzent.Text = Convert.ToInt32(car.TankFuellstand).ToString() + "%";
+            progressBarTank.Value = Convert.ToInt32(car.TankFuellstand);
+            labelSchalter.Text = car.AktuellerGang.ToString();
         }
+
 
         private void buttonBremsen_MouseDown(object sender, MouseEventArgs e)
         {
@@ -138,6 +153,9 @@ namespace AutoSimulator
             {
                 MessageBox.Show("Bitte wählen Sie zuerst ein Auto aus.");
             }
+            labelSchalter.Text = car.AktuellerGang.ToString();
+            labelKmh.Text = car.AktuelleGeschwindigkeit.ToString();
+
         }
         private void buttonBremsen_MouseUp(object sender, MouseEventArgs e)
         {
@@ -152,7 +170,5 @@ namespace AutoSimulator
                 labelKmh.Text = car.AktuelleGeschwindigkeit.ToString();
             }
         }
-
-        
     }
 }

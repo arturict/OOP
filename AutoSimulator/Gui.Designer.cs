@@ -37,6 +37,7 @@
             this.comboBoxAutos = new System.Windows.Forms.ComboBox();
             this.progressBarTank = new System.Windows.Forms.ProgressBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelTankProzent = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.labelSchalter = new System.Windows.Forms.Label();
@@ -127,6 +128,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox1.Controls.Add(this.labelTankProzent);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
@@ -141,6 +143,16 @@
             this.groupBox1.Size = new System.Drawing.Size(451, 129);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
+            // 
+            // labelTankProzent
+            // 
+            this.labelTankProzent.AutoSize = true;
+            this.labelTankProzent.ForeColor = System.Drawing.Color.Red;
+            this.labelTankProzent.Location = new System.Drawing.Point(45, 101);
+            this.labelTankProzent.Name = "labelTankProzent";
+            this.labelTankProzent.Size = new System.Drawing.Size(21, 13);
+            this.labelTankProzent.TabIndex = 12;
+            this.labelTankProzent.Text = "0%";
             // 
             // pictureBox2
             // 
@@ -297,6 +309,14 @@
             this.notifyIcon1.Text = "Cockpit\r\n";
             this.notifyIcon1.Visible = true;
             // 
+            // timerGas
+            // 
+            this.timerGas.Tick += new System.EventHandler(this.timerGas_Tick);
+            // 
+            // timerBremsen
+            // 
+            this.timerBremsen.Tick += new System.EventHandler(this.timerBremsen_Tick);
+            // 
             // timerTanken
             // 
             this.timerTanken.Tick += new System.EventHandler(this.timerTanken_Tick);
@@ -354,6 +374,7 @@
         private System.Windows.Forms.Timer timerGas;
         private System.Windows.Forms.Timer timerBremsen;
         private System.Windows.Forms.Timer timerTanken;
+        private System.Windows.Forms.Label labelTankProzent;
     }
 }
 

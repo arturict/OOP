@@ -15,7 +15,7 @@ namespace Tannenbaum
         {
             BreiteStamm = Breite;
             HoeheStamm = Hoehe;
-            HoehenKrone = Hoehe;
+            HoehenKrone = HoeheK;
         }
 
         public string Zeichne()

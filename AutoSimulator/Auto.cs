@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace AutoSimulator
         public int PS { get; set; }
         public int AktuelleGeschwindigkeit { get; set; }
         public int AktuellerGang { get; set; }
-        public bool IstMotorGestartet { get; private set; }
+        public bool IstMotorGestartet { get;  set; }
         public double TankFuellstand { get; set; }
 
         public Auto(string marke, int ps)
@@ -40,7 +41,6 @@ namespace AutoSimulator
         public void SchalteMotorAus()
         {
             IstMotorGestartet = false;
-
         }
 
 
@@ -49,31 +49,23 @@ namespace AutoSimulator
         {
             return this.Marke.ToString();
         }
-        public void Auftanken()
-        {
-          
-            if (!IstMotorGestartet)
-            {
-                TankFuellstand = 100;
-            }
-        }
+
         public void gibGas()
         {
+            
             if (IstMotorGestartet && TankFuellstand > 0)
             {
-                double grundbeschleunigung = PS * 0.1;
-                double beschleunigungsFaktor = 1 - (AktuelleGeschwindigkeit / (double)PS);
+                SoundPlayer player = new SoundPlayer(Properties.Resources.fahren);
+                player.Play();
+                double grundbeschleunigung = PS * 0.03;
+                double beschleunigungsFaktor = 1 - (AktuelleGeschwindigkeit / 200.0);
 
-                int neueGeschwindigkeit = (int)(AktuelleGeschwindigkeit + grundbeschleunigung * beschleunigungsFaktor);
+                int neueGeschwindigkeit = (int)Math.Round(AktuelleGeschwindigkeit + grundbeschleunigung * beschleunigungsFaktor);
 
                 AktuelleGeschwindigkeit = Math.Min(neueGeschwindigkeit, PS);
 
-                TankFuellstand -= (PS * 0.01 + AktuelleGeschwindigkeit * 0.001);
-
-                if (TankFuellstand < 0)
-                {
-                    TankFuellstand = 0;
-                }
+                TankFuellstand -= (PS * 0.005 + AktuelleGeschwindigkeit * 0.0005);
+                if (TankFuellstand < 0) TankFuellstand = 0;
             }
 
             if (TankFuellstand == 0)
@@ -82,8 +74,11 @@ namespace AutoSimulator
                 AktuelleGeschwindigkeit = 0;
             }
             updateGear();
-
+            
         }
+
+
+
 
         public void bremsen()
         {
@@ -117,10 +112,10 @@ namespace AutoSimulator
                     AktuellerGang = 6;
                     break;
                 default:
-                    AktuellerGang = 0;
-                    break;
+                     break;
             }
         }
+
 
 
 

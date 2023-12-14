@@ -102,6 +102,7 @@
             this.textBoxAusgabe.Location = new System.Drawing.Point(86, 184);
             this.textBoxAusgabe.Multiline = true;
             this.textBoxAusgabe.Name = "textBoxAusgabe";
+            this.textBoxAusgabe.ReadOnly = true;
             this.textBoxAusgabe.Size = new System.Drawing.Size(546, 505);
             this.textBoxAusgabe.TabIndex = 7;
             // 

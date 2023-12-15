@@ -90,11 +90,7 @@ namespace CinemaTicketReservation
             string nachname = textBoxCustomerLastName.Text;
             Customer customer = new Customer(vorname, nachname, phoneNumber);
 
-            int rowNumber = int.Parse(textBoxRow.Text); 
-            int seatNumber = int.Parse(textBoxSeat.Text); 
-
-            Row row = show.Rows.FirstOrDefault(r => r.Number == rowNumber);
-            Seat seat = row?.GetSeat(seatNumber);
+            Seat seat = selectedSeat;
 
             if (show.IsSeatReserved(seat))
             {
@@ -119,6 +115,8 @@ namespace CinemaTicketReservation
             textBoxCustomerFirstName.Text = string.Empty;
             textBoxCustomerLastName.Text = string.Empty;
             textBoxCustomerPhoneNr.Text = string.Empty;
+
+            CreateSeatPlan(show);
         }
 
         

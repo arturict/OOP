@@ -11,7 +11,7 @@ namespace CinemaTicketReservation.Model.DataAccess
 
         #region constants 
 
-        // TODO: Werte dynamisch von der Datenbank gelesen (für den Prototyp noch nicht nötig)
+        //  Werte dynamisch von der Datenbank gelesen (für den Prototyp noch nicht nötig)
         public const int CountOfRows = 10;
         public const int CountOfSeatsPerRow = 10;
 
@@ -21,7 +21,7 @@ namespace CinemaTicketReservation.Model.DataAccess
 
         public User Authenticate(string userName, string password)
         {
-            // TODO: für den Prototypen reicht das, die Implementation des Authentifizierungsmechanismus machen wir später 
+            //  für den Prototypen reicht das, die Implementation des Authentifizierungsmechanismus machen wir später 
             User user = new User("Hans", "Tester");
             user.UserName = userName;
             user.IsLoggedIn = true;
@@ -31,7 +31,7 @@ namespace CinemaTicketReservation.Model.DataAccess
 
         public List<Show> GetShows()
         {
-            // TODO: die Vorführungen von der Datenbank holen (noch nicht nötig für Prototyp) 
+            //  die Vorführungen von der Datenbank holen (noch nicht nötig für Prototyp) 
             List<Show> showList = new List<Show>();
 
             Movie movie1 = new Movie();
@@ -63,7 +63,7 @@ namespace CinemaTicketReservation.Model.DataAccess
         
         public void SaveReservations(Show show)
         { 
-            // TODO: Reservationen in der Datenbank ablegen (für Prototyp noch nicht nötig) 
+            // Reservationen in der Datenbank ablegen (für Prototyp noch nicht nötig) 
         }
         
         private void FillRows(ref Show show, int countOfRows, int countOfSeatsPerRow)

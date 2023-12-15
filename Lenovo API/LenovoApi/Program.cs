@@ -18,7 +18,6 @@ namespace LenovoApi
 
             Console.Write("Seriennummer eingeben: ");
             string serial = Console.ReadLine();
-            serial = "PG01GTB2";
 
            
                 MachineInfo mi = Api.GetMachineInfo(serial);

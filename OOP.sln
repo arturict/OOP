@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warenkorb Versuch2", "Waren
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSimulator", "AutoSimulator\AutoSimulator.csproj", "{070C888E-9500-485F-B553-AD6059FE95C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kontakt Manager", "Kontakt Manager\Kontakt Manager.csproj", "{F9BB1392-BCBD-4811-8387-F7A28F297E51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{070C888E-9500-485F-B553-AD6059FE95C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{070C888E-9500-485F-B553-AD6059FE95C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{070C888E-9500-485F-B553-AD6059FE95C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9BB1392-BCBD-4811-8387-F7A28F297E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9BB1392-BCBD-4811-8387-F7A28F297E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9BB1392-BCBD-4811-8387-F7A28F297E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9BB1392-BCBD-4811-8387-F7A28F297E51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
